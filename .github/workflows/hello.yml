@@ -1,16 +1,19 @@
-name: Checkout & Build Pipeline
+name: Node CI
 on: 
   push:
     branches:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello GitHub Actions"
       - uses: actions/checkout@v4
-      - run: pwd
-      - run: ls -la
-      - run: touch file1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - run: npm install
+      - run: nps test
       - run: ls -la
