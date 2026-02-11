@@ -1,8 +1,12 @@
 name: Hello Pipeline
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
-  hello:
+  hellogit:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello GitHub Actions"
+      - run: echo 'This is my first pipeline'
