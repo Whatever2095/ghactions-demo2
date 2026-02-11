@@ -1,12 +1,14 @@
-name: Hello Pipeline
+name: Checkout & Build Pipeline
 on: 
   push:
     branches:
       - main
 
 jobs:
-  hellogit:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello GitHub Actions"
-      - run: echo 'This is my first pipeline'
+      - uses: actions/checkout@v4
+      - run: ls -la
+      - run: echo "Build Started"
