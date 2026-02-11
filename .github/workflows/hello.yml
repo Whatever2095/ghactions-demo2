@@ -10,5 +10,7 @@ jobs:
     steps:
       - run: echo "Hello GitHub Actions"
       - uses: actions/checkout@v4
+      - run: pwd
       - run: ls -la
-      - run: echo "Build Started"
+      - run: touch file1
+      - run: ls -la
